@@ -1,0 +1,18 @@
+
+<h1>Payment wallet</h1>
+<div class="col-md-8 text-right">
+    <span *ngIf="!loginflag">
+        <a class="nav-item nav-link text-dark " routerLink="/login" class="btn btn-info">Login</a>
+      </span>
+      <span *ngIf="loginflag">
+        <span class="col-md-8 text-left">Hello {{userName|titlecase}}</span>
+        <a class="nav-item nav-link text-dark" routerLink="login" class="btn btn-danger" (click)="logout()">Logout</a>
+     </span>
+</div>
+<nav class="col-md-10 mx-auto bg-dark p-2 row">
+    <a *ngIf="loginflag" routerLink="addwallet" class="btn btn-info"> Add wallet</a>
+  </nav>
+  <nav class="col-md-10 mx-auto bg-dark p-2 row">
+    <a *ngIf="loginflag" routerLink="addbank" class="btn btn-info"> Add bank</a>
+  </nav>
+<router-outlet></router-outlet>

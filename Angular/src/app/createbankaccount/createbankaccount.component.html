@@ -1,0 +1,31 @@
+<h1>Bank Form</h1>
+<div style="width: 400px;">
+  
+    <form #accfrm="ngForm" (ngSubmit)="onSubmit()">
+        <div>Enter AccountID</div>
+        <div>
+            <div><input type="text" id="accountId" name="accountId" class="form-control" required #fromId="ngModel"  [(ngModel)]="bankAcc.accountId"/></div>
+            <div class="alert alert-danger" *ngIf="fromId.invalid && fromId.touched">AccountID  is required</div>
+        </div>
+        <div>Enter PhoneNo</div>
+        <div>
+            <div><input type="text" id="phoneNo" name="phoneNo" class="form-control" required #fromId="ngModel"  [(ngModel)]="bankAcc.phoneNo"/></div>
+            <div class="alert alert-danger" *ngIf="fromId.invalid && fromId.touched">PhoneNo  is required</div>
+        </div>
+        <div>Enter BankName</div>
+        <div>
+            <div><input type="text" id="bankName" name="bankName" class="form-control" required #fromId="ngModel"  [(ngModel)]="bankAcc.bankName"/></div>
+            <div class="alert alert-danger" *ngIf="fromId.invalid && fromId.touched">BankName  is required</div>
+        </div>
+        <div>Enter Pin</div>
+        <div>
+            <div><input type="text" id="pin" name="pin" class="form-control" required #fromId="ngModel"  [(ngModel)]="bankAcc.pin"/></div>
+            <div class="alert alert-danger" *ngIf="fromId.invalid && fromId.touched">Pin  is required</div>
+        </div>
+        
+      <button type="submit" class="btn-success p-1 m-1 " [disabled]="!accfrm.valid" >Add Bank Account</button>
+    </form>
+    <div [hidden]="!submitted">
+        <h4> Bank Account added succcessfully</h4>
+     </div>
+</div>

@@ -1,0 +1,17 @@
+nav{
+    background-color: black;
+}
+nav a{
+    color: white;        
+}
+
+.nav-item{
+    padding-right: 400px;
+    padding-left: 260px;
+}
+h1{
+    text-align: center;
+    background-color: beige;
+    padding-bottom: 50px;
+
+}
