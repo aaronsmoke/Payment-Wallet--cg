@@ -1,0 +1,30 @@
+
+<div>
+  <div class="alert alert-success" *ngIf="msg != undefined">{{msg}}</div>
+    <div class="alert alert-danger" *ngIf="errorMsg != undefined">{{errorMsg}}</div>
+  
+  
+  
+  <form #accfrm="ngForm" (ngSubmit)="transferFund()">
+  <div> From Wallet ID :  </div>
+   <div>
+      <div><input type="text" id="amount" name="amount" class="form-control"  required #fromId= "ngModel" [(ngModel)]="transferfundform.fromWalletId" /></div>
+      <div class="alert alert-danger" *ngIf="fromId.invalid && fromId.touched">Sender ID is required</div>
+   
+  </div>
+  
+  <div> Enter Receipent ID :  </div>
+   <div><input type="text" id="amount" name="amount" class="form-control"  required #toId= "ngModel" [(ngModel)]="transferfundform.toWalletId" /></div>
+     <div class="alert alert-danger" *ngIf="toId.invalid && toId.touched">Receipent ID is required</div>
+  
+    
+      <div>Enter Amount :  </div>
+      <div><input type="number" id="amount" name="amount" class="form-control"  required #amt= "ngModel" [(ngModel)]="transferfundform.amount" /></div>
+     <div class="alert alert-danger" *ngIf="amt.invalid && amt.touched">Amount is required</div>
+  
+      
+      <button type="submit" class="btn-success p-1 m-1 " [disabled]="!accfrm.valid" >Transfer Fund</button>
+</form>
+ 
+</div>
+  

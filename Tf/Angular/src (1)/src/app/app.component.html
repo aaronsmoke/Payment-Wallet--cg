@@ -1,0 +1,22 @@
+<header class="jumbotron text-center ">
+  <h1>
+    <img  [src]=myimage class="rounded-circle" width="200" height="200">
+    {{title}}</h1>
+    <div class="col-md-8 text-right">
+    <span *ngIf="!loginflag">
+      <a class="nav-item nav-link text-dark " routerLink="/login" class="btn btn-info">Login</a>
+    </span>
+
+      <span *ngIf="loginflag">
+        <span class="col-md-8 text-left">Hello {{userName|titlecase}}</span>
+        <a class="nav-item nav-link text-dark" routerLink="/login" class="btn btn-danger" (click)="logout()">Logout</a>
+     </span>
+    </div>
+</header>
+
+<nav class="col-md-10 mx-auto bg-dark p-2 row">
+  <a *ngIf="loginflag" routerLink="/transfer" class="btn btn-info"> transfer</a>
+</nav>
+
+
+<router-outlet></router-outlet>
